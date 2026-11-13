@@ -10,7 +10,7 @@ import { defineMarkInputRule, type MarkInputRuleOptions } from '../input-rule/in
 export const codeInputRule: MarkInputRuleOptions = {
   regex: /* @__PURE__ */ new RegExp(
     (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
-      + '`([^\\s`]|[^\\s`][^`]{0,400}[^\\s`])`$',
+      + '`([^\\s`]|[^\\s`][^`]{0,490}[^\\s`])`$',
   ),
   type: 'code',
 }

@@ -45,7 +45,7 @@ export interface MarkInputRuleOptions {
    * will be deleted.
    *
    * Input rules only see the last 500 characters before the cursor. Keep the
-   * longest possible match under 500 characters (e.g. `[^*]{0,400}` instead of
+   * longest possible match under 500 characters (e.g. `[^*]{0,490}` instead of
    * `[^*]*`), so that lookbehind assertions test the real text before it.
    */
   regex: RegExp

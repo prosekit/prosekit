@@ -10,7 +10,7 @@ import { defineMarkInputRule, type MarkInputRuleOptions } from '../input-rule/in
 export const boldInputRule: MarkInputRuleOptions = {
   regex: /* @__PURE__ */ new RegExp(
     (canUseRegexLookbehind() ? String.raw`(?<=\s|^)` : '')
-      + String.raw`\*\*([^\s*]|[^\s*][^*]{0,400}[^\s*])\*\*$`,
+      + String.raw`\*\*([^\s*]|[^\s*][^*]{0,490}[^\s*])\*\*$`,
   ),
   type: 'bold',
 }

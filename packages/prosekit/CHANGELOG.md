@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.23.2
+
+### Patch Changes
+
+- [`12fe3e4`](https://github.com/ocavue/prosekit/commit/12fe3e40b294e59a9b30e310be2ed378ec603433) ![](https://prosekit.dev/b/extensions)
+
+  Fix the blockquote input rule so it only fires when `> ` is typed at the start of a text block. In a text block longer than 500 characters, typing could previously wrap the block in a blockquote and delete the previous character whenever `> ` happened to sit 500 characters before the cursor.
+
 ## 0.23.1
 
 ### Patch Changes

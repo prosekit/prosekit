@@ -291,16 +291,17 @@ const inputRuleFacet = defineFacet<InputRulePayload, PluginPayload>({
 })
 
 /**
- * Returns true when the match starts at the first character of the text that
- * `prosemirror-inputrules` matches against, and that text starts after the
- * start of the textblock.
+ * Returns true when the regex matched from the first character of a cut-off
+ * `textBefore`.
  *
- * `prosemirror-inputrules` only matches against the last 500 characters before
- * the cursor. In a longer textblock, `^` and lookbehind assertions at the start
- * of a regex test the start of that window, not the real text before the
- * match.
- *
+ * `prosemirror-inputrules` builds `textBefore` from at most the last 500
+ * characters before the cursor, then runs the regex on it:
  * https://code.haverbeke.berlin/prosemirror/prosemirror-inputrules/src/tag/1.5.1/src/inputrules.ts#L115-L116
+ *
+ * In a longer textblock, `textBefore` starts in the middle of the text. A match
+ * at index 0 starts at that cut, so `^` and lookbehind assertions at the start
+ * of the regex test the cut instead of the real text before the match.
+ * `parentOffset > 0` tells that the match does not start at the textblock start.
  */
 function isMatchAtCutOffStart(state: EditorState, match: RegExpMatchArray, start: number): boolean {
   return match.index === 0 && state.doc.resolve(start).parentOffset > 0

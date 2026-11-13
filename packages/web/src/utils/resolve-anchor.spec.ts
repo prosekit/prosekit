@@ -1,4 +1,5 @@
 import type { VirtualElement } from '@floating-ui/dom'
+import { returnNull } from '@ocavue/utils'
 import { describe, expect, it } from 'vitest'
 
 import { resolveAnchor } from './resolve-anchor.ts'
@@ -26,6 +27,6 @@ describe('resolveAnchor', () => {
   })
 
   it('returns undefined when a function anchor returns null', () => {
-    expect(resolveAnchor(() => null)).toBe(undefined)
+    expect(resolveAnchor(returnNull)).toBe(undefined)
   })
 })

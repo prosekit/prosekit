@@ -1,11 +1,12 @@
 import { computed, createSignal, type Signal } from '@aria-ui/core'
+import { noop } from '@ocavue/utils'
 import { describe, expect, it } from 'vitest'
 
 import { createLazySignal } from './lazy-signal.ts'
 
 describe('createLazySignal', () => {
   it('returns fallback when remote is undefined', () => {
-    const lazy = createLazySignal<number>(() => undefined, 42)
+    const lazy = createLazySignal<number>(noop, 42)
     expect(lazy.get()).toBe(42)
   })
 
@@ -23,7 +24,7 @@ describe('createLazySignal', () => {
   })
 
   it('set is a no-op when remote is undefined', () => {
-    const lazy = createLazySignal<number>(() => undefined, 42)
+    const lazy = createLazySignal<number>(noop, 42)
     expect(() => lazy.set(99)).not.toThrow()
     expect(lazy.get()).toBe(42)
   })

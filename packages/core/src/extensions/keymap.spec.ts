@@ -1,3 +1,4 @@
+import { returnFalse } from '@ocavue/utils'
 import type { Command } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 import { keyboard } from 'vitest-browser-commands/playwright'
@@ -13,8 +14,8 @@ describe('keymap', () => {
   it('can register and unregister keymap', () => {
     const { editor } = setupTest()
 
-    const command1: Command = vi.fn(() => false)
-    const command2: Command = vi.fn(() => false)
+    const command1: Command = vi.fn(returnFalse)
+    const command2: Command = vi.fn(returnFalse)
 
     const keymap1: Keymap = { Enter: command1 }
     const keymap2: Keymap = { Enter: command2 }
@@ -50,8 +51,8 @@ describe('keymap', () => {
   it('can skip unnecessary plugin update', () => {
     const { editor } = setupTest()
 
-    const command1: Command = vi.fn(() => false)
-    const command2: Command = vi.fn(() => false)
+    const command1: Command = vi.fn(returnFalse)
+    const command2: Command = vi.fn(returnFalse)
 
     const keymap1: Keymap = { Enter: command1 }
     const keymap2: Keymap = { Enter: command2 }

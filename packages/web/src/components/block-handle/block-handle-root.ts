@@ -12,6 +12,7 @@ import {
 } from '@aria-ui/core'
 import { createOverlayStore } from '@aria-ui/elements/overlay'
 import type { VirtualElement } from '@floating-ui/dom'
+import { noop, returnFalse, returnTrue } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 
@@ -77,9 +78,9 @@ export function setupBlockHandleRoot(
 
   const overlayStore = createOverlayStore(
     getOpen,
-    () => {},
-    () => true,
-    () => false,
+    noop,
+    returnTrue,
+    returnFalse,
     (event) => host.dispatchEvent(event),
   )
 

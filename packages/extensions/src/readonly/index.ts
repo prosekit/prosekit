@@ -4,6 +4,7 @@
  * @module
  */
 
+import { returnFalse } from '@ocavue/utils'
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
@@ -17,6 +18,6 @@ export function defineReadonly(): PlainExtension {
 const plugin = new ProseMirrorPlugin({
   key: new PluginKey('prosekey-readonly'),
   props: {
-    editable: () => false,
+    editable: returnFalse,
   },
 })

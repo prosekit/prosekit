@@ -55,7 +55,7 @@ export function config(userConfig?: UserConfig): UserConfig {
     checks: {
       moduleLevelDirective: false,
     },
-    dts: { build: true, incremental: true, sourcemap: true },
+    dts: { tsc: { build: true, incremental: true }, sourcemap: true },
     hash: false,
     css: {
       splitting: true,

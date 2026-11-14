@@ -264,8 +264,7 @@ function BlockHandleItem(props: { item: ItemInfo }) {
         <Menu.SubmenuTrigger className={ITEM_CLASSNAME}>
           {props.item.iconClassName && <span className={clsx('inline-block size-4', props.item.iconClassName)} />}
           <span className="flex-1">{props.item.label}</span>
-          <span className="inline-block size-4 i-lucide-chevron-right opacity-50">
-          </span>
+          <span className="inline-block size-4 i-lucide-chevron-right opacity-50"></span>
         </Menu.SubmenuTrigger>
         <Menu.Portal>
           <Menu.Positioner align="center">
@@ -316,8 +315,7 @@ export default function BlockHandleMenu(props: Props) {
           event.preventDefault()
           setOpen(open => !open)
         }}
-      >
-      </Menu.Trigger>
+      ></Menu.Trigger>
       <Menu.Portal>
         <Menu.Backdrop className="size-dvw flex fixed inset-0 opacity-0" />
         <Menu.Positioner className="outline-none" side="right" align="center">

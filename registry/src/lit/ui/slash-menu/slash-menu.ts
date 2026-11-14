@@ -18,7 +18,7 @@ import { SlashMenuItemElement } from './slash-menu-item.ts'
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
 const regex = new RegExp(
-  (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`\/(\S.{0,100})?$`,
+  (canUseRegexLookbehind() ? String.raw`(?<!\S)` : '') + String.raw`\/(\S.{0,90})?$`,
   'u',
 )
 

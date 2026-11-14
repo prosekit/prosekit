@@ -53,7 +53,7 @@
     "prosemirror-model": "^1.25.13",
     "prosemirror-state": "^1.4.4",
     "prosemirror-transform": "^1.12.5",
-    "prosemirror-view": "^1.42.9"
+    "prosemirror-view": "1.43.0-beta3"
   },
   "devDependencies": {
     "@prosekit/config-ts": "workspace:*",

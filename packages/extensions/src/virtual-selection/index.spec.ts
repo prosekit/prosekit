@@ -32,7 +32,11 @@ function defineNestedEditableNodeView() {
         contentDOM.dataset.testid = 'nested-editable-content'
 
         dom.append(button, contentDOM)
-        return { dom, contentDOM }
+        return {
+          dom,
+          contentDOM,
+          stopEvent: (event: Event) => button.contains(event.target as Node),
+        }
       },
     }),
   )

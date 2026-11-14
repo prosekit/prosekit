@@ -49,3 +49,6 @@ minimumReleaseAgeExclude:
   - "prosemirror-view"
   - "prosemirror-highlight"
   - "prosemirror-flat-list"
+
+overrides:
+  prosemirror-view: 1.43.0-beta3

@@ -296,6 +296,13 @@ const cloneElementTransforms: ElementTransform[] = [
     apply: (element) => element.removeAttribute('value'),
   },
 
+  // Preact v11 skips the value attribute on <option> when the value equals the
+  // option text. We add the value attribute back.
+  {
+    matches: (element) => element.tagName === 'OPTION' && !element.hasAttribute('value'),
+    apply: (element) => element.setAttribute('value', (element as HTMLOptionElement).value),
+  },
+
   // Replace "id" attributes
   {
     matches: (element) => !!element.getAttribute('id'),

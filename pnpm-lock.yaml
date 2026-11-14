@@ -72,9 +72,6 @@ importers:
       nano-staged:
         specifier: ^1.0.2
         version: 1.0.2
-      oxfmt:
-        specifier: ^0.72.0
-        version: 0.72.0(svelte@5.57.2)
       playwright:
         specifier: ^1.64.0
         version: 1.64.0
@@ -13901,6 +13898,7 @@ snapshots:
       '@oxfmt/binding-win32-ia32-msvc': 0.72.0
       '@oxfmt/binding-win32-x64-msvc': 0.72.0
       svelte: 5.57.2(@typescript-eslint/types@8.72.0)
+    optional: true
 
   p-limit@3.1.0:
     dependencies:
@@ -14840,7 +14838,8 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
 
-  tinypool@2.2.0: {}
+  tinypool@2.2.0:
+    optional: true
 
   tinyps@0.5.1: {}
 

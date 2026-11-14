@@ -41,7 +41,6 @@ export default function Link(props: SolidMarkViewProps): JSX.Element {
       href={href}
       ref={props.contentRef}
       style={`color: ${color()}; transition: color 1s ease-in-out;`}
-    >
-    </a>
+    ></a>
   )
 }

@@ -29,8 +29,7 @@ export default function Editor(props: EditorProps) {
           <div
             ref={editor.mount}
             className="CSS_EDITOR_CONTENT"
-          >
-          </div>
+          ></div>
           <InlineMenu />
         </div>
       </div>

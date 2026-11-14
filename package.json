@@ -43,7 +43,7 @@
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "dprint": "^0.61.1",
+    "dprint": "^0.64.3",
     "eslint": "^10.14.0",
     "knip": "^6.42.1",
     "monorepo-typescript-references": "^1.1.2",

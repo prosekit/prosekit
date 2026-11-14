@@ -69,8 +69,13 @@ export interface AutocompleteRuleOptions {
    * The regular expression to match against the text before the cursor. The
    * last match before the cursor is used.
    *
-   * For a slash menu, you might use `/(?<!\S)\/(\S.*)?$/u`.
+   * For a slash menu, you might use `/(?<!\S)\/(\S.{0,90})?$/u`.
    * For a mention, you might use `/@\w*$/`
+   *
+   * Autocomplete only sees the last 200 UTF-16 code units before the cursor.
+   * Keep the longest possible match under 200 code units, so that lookbehind
+   * assertions test the real text before it. With the `u` flag, `.` can match
+   * two code units.
    */
   regex: RegExp
 

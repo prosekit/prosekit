@@ -1,7 +1,5 @@
 import { expect, it } from 'vitest'
-import { userEvent } from 'vitest/browser'
-
-import { expectLocatorToHaveCount, testStory, testStoryConsistency, waitForEditor } from './helpers'
+import { dragAndDrop, expectLocatorToHaveCount, testStory, testStoryConsistency, waitForEditor } from './helpers'
 
 testStoryConsistency('drop-cursor')
 
@@ -18,11 +16,7 @@ testStory('drop-cursor', () => {
     expect(new Set(before).size).toBe(before.length)
 
     // Drag first image to just before the third image (between the 2nd and 3rd)
-    await userEvent.dragAndDrop(
-      images.nth(0),
-      images.nth(2),
-      { targetPosition: { x: 5, y: 5 } },
-    )
+    await dragAndDrop(images.nth(0), images.nth(2), { endPosition: { x: 5, y: 5 } })
 
     const after = images.elements().map((e) => e.getAttribute('src') || '')
 

@@ -11,7 +11,7 @@ import type { CodeBlockAttrs } from './code-block-types.ts'
  * @internal
  */
 export const codeBlockInputRule: TextBlockInputRuleOptions = {
-  regex: /^```(\S*)\s$/,
+  regex: /^```(\S{0,50})\s$/,
   type: 'codeBlock',
   attrs: getAttrs,
 }
@@ -29,7 +29,7 @@ export function defineCodeBlockInputRule(): PlainExtension {
  * @internal
  */
 export const codeBlockEnterRule: TextBlockEnterRuleOptions = {
-  regex: /^```(\S*)$/,
+  regex: /^```(\S{0,50})$/,
   type: 'codeBlock',
   attrs: getAttrs,
 }

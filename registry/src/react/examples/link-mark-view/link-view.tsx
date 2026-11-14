@@ -42,7 +42,6 @@ export default function Link(props: ReactMarkViewProps) {
       href={href}
       ref={props.contentRef}
       style={{ color, transition: 'color 1s ease-in-out' }}
-    >
-    </a>
+    ></a>
   )
 }

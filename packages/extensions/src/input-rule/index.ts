@@ -43,6 +43,10 @@ export interface MarkInputRuleOptions {
    * The regular expression to match against, which should end with `$` and has
    * exactly one capture group. All other matched text outside the capture group
    * will be deleted.
+   *
+   * Input rules only see the last 500 characters before the cursor. Keep the
+   * longest possible match under 500 characters (e.g. `[^*]{0,490}` instead of
+   * `[^*]*`), so that lookbehind assertions test the real text before it.
    */
   regex: RegExp
 
@@ -135,8 +139,12 @@ export function defineMarkInputRule(
 export interface TextBlockInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$`. It
-   * usually also starts with `^` to that it is only matched at the start of a
+   * usually also starts with `^` so that it is only matched at the start of a
    * textblock.
+   *
+   * Input rules only see the last 500 characters before the cursor, so `^`
+   * means the start of the textblock only when the longest possible match is
+   * under 500 characters (e.g. `\S{0,50}` instead of `\S*`).
    */
   regex: RegExp
 
@@ -190,8 +198,12 @@ export function createTextBlockInputRuleHandler({
 export interface WrappingInputRuleOptions {
   /**
    * The regular expression to match against, which should end with `$`. It
-   * usually also starts with `^` to that it is only matched at the start of a
+   * usually also starts with `^` so that it is only matched at the start of a
    * textblock.
+   *
+   * Input rules only see the last 500 characters before the cursor, so `^`
+   * means the start of the textblock only when the longest possible match is
+   * under 500 characters (e.g. `\S{0,50}` instead of `\S*`).
    */
   regex: RegExp
 

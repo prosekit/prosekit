@@ -41,6 +41,15 @@ export default defineESLintConfig(
     },
   },
   {
+    // Registry code is copied into user projects, which may not depend on `@ocavue/utils`.
+    files: ['registry/src/**/*', 'registry/**/*.md/**/*'],
+    rules: {
+      'ocavue/prefer-constant-function': 'off',
+      'ocavue/prefer-noop': 'off',
+      'ocavue/prefer-sleep': 'off',
+    },
+  },
+  {
     files: [
       'registry/src/react/ui/code-block-view/code-block-view.tsx',
       'registry/src/preact/ui/code-block-view/code-block-view.tsx',

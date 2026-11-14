@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/web",
   "type": "module",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "private": false,
   "description": "A collection of web components for ProseKit",
   "author": {
@@ -51,7 +51,7 @@
     "@aria-ui/elements": "^0.2.0",
     "@aria-ui/utils": "^0.1.8",
     "@floating-ui/dom": "^1.8.0",
-    "@ocavue/utils": "^1.9.0",
+    "@ocavue/utils": "^1.12.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",

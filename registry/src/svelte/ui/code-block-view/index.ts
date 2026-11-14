@@ -7,6 +7,7 @@ export function defineCodeBlockView(): Extension {
   return defineSvelteNodeView({
     name: 'codeBlock',
     contentAs: 'code',
+    stopEvent: (event) => event.target instanceof Element && !!event.target.closest('select'),
     component: CodeBlockView as SvelteNodeViewComponent,
   })
 }

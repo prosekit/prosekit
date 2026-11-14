@@ -142,6 +142,7 @@ declare module 'astro:content' {
   data: InferEntrySchema<"docs">;
   rendered?: RenderedContent;
   filePath?: string;
+  digest?: string | number;
 }>;
 
 	};

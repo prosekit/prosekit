@@ -4,12 +4,12 @@ packages:
   - packages/*
 
 catalog:
-  "@tsdown/css": "^0.23.1"
+  "@tsdown/css": "^0.23.7"
   "@types/node": "^24.12.2"
   "@vitest/browser-playwright": "^5.1.0"
   "@vitest/coverage-v8": "^5.1.0"
   "@vitest/ui": "^5.1.0"
-  tsdown: "^0.23.1"
+  tsdown: "^0.23.7"
   typescript: "~6.0.3"
   vitest: "^5.1.0"
 
@@ -34,8 +34,6 @@ strictPeerDependencies: true
 peerDependencyRules:
   allowedVersions:
     "vitest-browser-solid>vitest": "5"
-  allowAny:
-    - "oxc-transform-react"
 
 trustPolicy: no-downgrade
 
@@ -51,7 +49,6 @@ minimumReleaseAgeExclude:
   - "prosemirror-view"
   - "prosemirror-highlight"
   - "prosemirror-flat-list"
-  - eslint-plugin-unicorn@79.0.0
 
 overrides:
-  prosemirror-view: 1.43.0-beta2
+  prosemirror-view: 1.43.0-beta3

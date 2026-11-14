@@ -7,5 +7,6 @@ export function defineImageView(): Extension {
   return defineReactNodeView({
     name: 'image',
     component: ImageView satisfies ReactNodeViewComponent,
+    stopEvent: (event) => event.target instanceof Element && !!event.target.closest('input'),
   })
 }

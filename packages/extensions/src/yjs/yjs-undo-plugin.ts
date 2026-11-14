@@ -1,3 +1,4 @@
+import { noop } from '@ocavue/utils'
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
@@ -22,7 +23,7 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
 
     if (undoManager.restore) {
       undoManager.restore()
-      undoManager.restore = () => {}
+      undoManager.restore = noop
     }
 
     const viewRet = originalUndoPluginView

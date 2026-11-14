@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.18.6",
+  "version": "0.18.7",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {
@@ -91,14 +91,14 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.9.0",
+    "@ocavue/utils": "^1.12.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "prosemirror-changeset": "^2.4.4",
+    "prosemirror-changeset": "^2.4.6",
     "prosemirror-drop-indicator": "^0.1.4",
     "prosemirror-dropcursor": "^1.8.4",
     "prosemirror-enter-rules": "^0.1.6",
-    "prosemirror-flat-list": "^0.7.3",
+    "prosemirror-flat-list": "^0.7.4",
     "prosemirror-gapcursor": "^1.4.1",
     "prosemirror-highlight": "^0.16.0",
     "prosemirror-math": "^0.2.2",

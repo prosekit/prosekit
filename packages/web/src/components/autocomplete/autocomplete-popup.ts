@@ -17,6 +17,7 @@ import {
   type ListboxRootProps,
 } from '@aria-ui/elements/listbox'
 import { OverlayPopupPropsDeclaration, setupOverlayPopup, type OverlayPopupProps } from '@aria-ui/elements/overlay'
+import { noop } from '@ocavue/utils'
 
 import { createLazySignal } from '../../utils/lazy-signal.ts'
 import { useNoFocus } from '../../utils/use-no-focus.ts'
@@ -46,7 +47,7 @@ export function setupAutocompletePopup(
   const eventTarget = createLazySignal<EventTarget | null>(() => getStore()?.eventTarget, null)
   const filter = createLazySignal<ItemFilter | null>(() => getStore()?.filter, defaultItemFilter)
   const getDisabled = () => (!(getOverlayStore()?.getIsOpen?.()))
-  const disabled: Signal<boolean> = { get: getDisabled, set: () => {} }
+  const disabled: Signal<boolean> = { get: getDisabled, set: noop }
   const listboxProps = createPopupListboxProps(filter, query, eventTarget, disabled)
 
   setupListboxRoot(host, listboxProps)

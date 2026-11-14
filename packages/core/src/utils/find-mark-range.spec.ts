@@ -1,3 +1,4 @@
+import { returnFalse } from '@ocavue/utils'
 import { expect, test } from 'vitest'
 
 import { setupTest } from '../testing/index.ts'
@@ -14,5 +15,5 @@ test('findMarkRange finds the run whose mark matches the predicate', () => {
   expect(range).toMatchObject({ from: 3, to: 5 })
   expect(range?.mark.attrs.href).toBe('https://example.com')
 
-  expect(findMarkRange($pos, () => false)).toBeUndefined()
+  expect(findMarkRange($pos, returnFalse)).toBeUndefined()
 })

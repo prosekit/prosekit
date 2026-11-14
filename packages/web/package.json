@@ -62,7 +62,6 @@
     "@prosekit/config-ts": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "oxfmt": "^0.78.0",
     "tsdown": "catalog:",
     "type-fest": "^5.10.0",
     "typescript": "catalog:",

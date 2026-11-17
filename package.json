@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.28.2",
+  "packageManager": "pnpm@11.28.11",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -48,12 +48,12 @@
     "knip": "^6.42.1",
     "monorepo-typescript-references": "^1.1.2",
     "nano-staged": "^1.0.2",
-    "playwright": "^1.64.0",
+    "playwright": "^1.65.0",
     "simple-git-hooks": "^2.14.0",
     "turbo": "^2.11.10",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "wrangler": "^4.144.0"
+    "wrangler": "^4.161.0"
   },
   "nano-staged": {
     "*": "dprint fmt --allow-no-files"

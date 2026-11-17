@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.23.3
+
+### Patch Changes
+
+- [`0d2111c`](https://github.com/ocavue/prosekit/commit/0d2111c57c78a34f89f71b3f48196ab5f9587ba5) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where typing in a long paragraph could turn it into a code block or apply a mark to the wrong text.
+
 ## 0.23.2
 
 ### Patch Changes

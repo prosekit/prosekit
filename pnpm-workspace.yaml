@@ -49,3 +49,6 @@ minimumReleaseAgeExclude:
   - "prosemirror-view"
   - "prosemirror-highlight"
   - "prosemirror-flat-list"
+  - prosemirror-history@1.5.2
+  - prosemirror-inputrules@1.7.0
+  - prosemirror-transform@1.12.7

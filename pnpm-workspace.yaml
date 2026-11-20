@@ -51,4 +51,4 @@ minimumReleaseAgeExclude:
   - "prosemirror-flat-list"
 
 overrides:
-  prosemirror-view: 1.43.0-beta4
+  prosemirror-view: 1.43.0

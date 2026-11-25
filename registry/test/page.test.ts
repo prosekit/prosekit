@@ -13,19 +13,19 @@ testStory('page', () => {
     await expectChunkCountToBe(13)
     expect(await getStablePageLayout()).toMatchInlineSnapshot(`
       "
-       13 | head      | h1: Page Layout Demo
-          |           | p: This is the first pa
-          |           | p: The content below wi
-          |      tail | div.prosekit-horizontal-rule.prosekit-page-break
-          | head      | h1: Page 2
-          |           | p: This is the second p
-          |           | p: When the content on
-          |      tail | img
-          | head      | img
-          |           | p: The images above exc
-          |           | h2: Known Limitation
-          |      tail | p: Page breaks only occ
-          | head tail | p: This is a very long
+      head      | h1: Page Layout Demo
+                | p: This is the first pa
+                | p: The content below wi
+           tail | div.prosekit-horizontal-rule.prosekit-page-break
+      head      | h1: Page 2
+                | p: This is the second p
+                | p: When the content on
+           tail | img
+      head      | img
+                | p: The images above exc
+                | h2: Known Limitation
+           tail | p: Page breaks only occ
+      head tail | p: This is a very long
       "
     `)
   })
@@ -49,18 +49,18 @@ testStory('page', () => {
 
     expect(await getStablePageLayout()).toMatchInlineSnapshot(`
       "
-       12 | head      | h1: Page Layout Demo
-          |           | p: This is the first pa
-          |           | p: The content below wi
-          |           | h1: Page 2
-          |           | p: This is the second p
-          |           | p: When the content on
-          |      tail | img
-          | head      | img
-          |           | p: The images above exc
-          |           | h2: Known Limitation
-          |      tail | p: Page breaks only occ
-          | head tail | p: This is a very long
+      head      | h1: Page Layout Demo
+                | p: This is the first pa
+                | p: The content below wi
+                | h1: Page 2
+                | p: This is the second p
+                | p: When the content on
+           tail | img
+      head      | img
+                | p: The images above exc
+                | h2: Known Limitation
+           tail | p: Page breaks only occ
+      head tail | p: This is a very long
       "
     `)
   })
@@ -84,20 +84,20 @@ testStory('page', () => {
 
     expect(await getStablePageLayout()).toMatchInlineSnapshot(`
       "
-       14 | head      | h1: Page Layout Demo
-          |           | p: This is the first pa
-          |           | p: The content below wi
-          |      tail | div.prosekit-horizontal-rule.prosekit-page-break
-          | head      | h1: Page 2
-          |           | p: This is the second p
-          |           | p: When the content on
-          |      tail | img
-          | head      | img
-          |           | p: The images above exc
-          |           | h2: Known Limitation
-          |      tail | p: Page breaks only occ
-          | head      | p: This is a very long
-          |      tail | p: 
+      head      | h1: Page Layout Demo
+                | p: This is the first pa
+                | p: The content below wi
+           tail | div.prosekit-horizontal-rule.prosekit-page-break
+      head      | h1: Page 2
+                | p: This is the second p
+                | p: When the content on
+           tail | img
+      head      | img
+                | p: The images above exc
+                | h2: Known Limitation
+           tail | p: Page breaks only occ
+      head      | p: This is a very long
+           tail | p: 
       "
     `)
   })
@@ -127,9 +127,6 @@ function getPageLayout(): string {
   const lines: string[] = []
 
   for (const chunk of chunks) {
-    const size = chunk.getAttribute('data-size') || ''
-    const sizeInfo = size.padStart(3)
-
     let type = ''
     if (chunk.hasAttribute('data-page-head')) {
       type += 'head '
@@ -155,7 +152,7 @@ function getPageLayout(): string {
       break
     }
 
-    lines.push(`${sizeInfo} | ${type} | ${childSnapshot}`)
+    lines.push(`${type} | ${childSnapshot}`)
   }
   return '\n' + lines.join('\n') + '\n'
 }

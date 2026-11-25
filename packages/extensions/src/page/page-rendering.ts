@@ -1,10 +1,11 @@
-import { getId } from '@ocavue/utils'
 import { definePlugin, type Extension } from '@prosekit/core'
 import type { Node } from '@prosekit/pm/model'
-import { Plugin, PluginKey } from '@prosekit/pm/state'
-import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import { Plugin, PluginKey, type PluginView } from '@prosekit/pm/state'
+import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 
-import { PAGE_CHUNK_TAG_NAME, registerPageChunkElement } from './page-element.ts'
+import { computePageLayout, type ChunkLayout } from './page-layout.ts'
+
+const PAGE_CHUNK_TAG_NAME = 'pm-page-chunk'
 
 export interface PageRenderingOptions {
   /**
@@ -51,9 +52,7 @@ export interface PageRenderingOptions {
 }
 
 export function definePageRendering(options: PageRenderingOptions = {}): PageRenderingExtension {
-  return definePlugin(
-    createPageRenderingPlugin(options),
-  )
+  return definePlugin(createPageRenderingPlugin(options))
 }
 
 /**
@@ -71,79 +70,62 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
     marginLeft = 70,
   } = options
 
-  type PluginState = [group: string, decoration: DecorationSet]
+  const key = new PluginKey<PageRenderingState>('prosekit-page-render')
 
-  const key = new PluginKey<PluginState>('prosekit-page-render')
-
-  function createDecorationSet(doc: Node, group: string): DecorationSet {
-    const decorations: Decoration[] = []
-    const totalCount = doc.childCount
-
-    doc.forEach((node, pos, index) => {
-      const isPageBreak: boolean | undefined = node.type.spec.pageBreak
-
-      decorations.push(Decoration.node(pos, pos + node.nodeSize, {
-        'nodeName': PAGE_CHUNK_TAG_NAME,
-        'data-group': group,
-        'data-break': isPageBreak ? 'true' : undefined,
-        'data-h': String(pageHeight),
-        'data-mt': String(marginTop),
-        'data-mb': String(marginBottom),
-        'data-size': index === 0 ? String(totalCount) : undefined,
-      }))
+  function createState(
+    doc: Node,
+    heights: number[],
+    prev?: PageRenderingState,
+  ): PageRenderingState {
+    const breaks: boolean[] = []
+    doc.forEach((node) => {
+      breaks.push(!!node.type.spec.pageBreak)
     })
 
-    return DecorationSet.create(doc, decorations)
+    const layouts = computePageLayout(heights, breaks, pageHeight, marginTop, marginBottom)
+
+    if (prev && isSameLayouts(prev.layouts, layouts)) {
+      return { heights, layouts: prev.layouts, decorations: prev.decorations }
+    }
+
+    const decorations: Decoration[] = []
+    doc.forEach((node, pos, index) => {
+      const layout = layouts[index]
+      decorations.push(
+        Decoration.node(pos, pos + node.nodeSize, {
+          'nodeName': PAGE_CHUNK_TAG_NAME,
+          'data-page-head': layout.head ? '' : undefined,
+          'data-page-tail': layout.tail ? '' : undefined,
+          'style': `padding-top:${layout.paddingTop}px;padding-bottom:${layout.paddingBottom}px;`,
+        }),
+      )
+    })
+
+    return { heights, layouts, decorations: DecorationSet.create(doc, decorations) }
   }
 
-  return new Plugin<PluginState>({
+  return new Plugin<PageRenderingState>({
     key,
-    view: () => {
-      registerPageChunkElement()
-      return {}
-    },
+    view: (view) => new PageMeasureView(view, key),
     state: {
-      init: (_config, state): PluginState => {
-        const group = `page-group-${getId()}`
-        const decoration = createDecorationSet(state.doc, group)
-        return [group, decoration]
+      init: (_config, state): PageRenderingState => {
+        return createState(state.doc, [])
       },
-      apply: (tr, value, oldState, newState): PluginState => {
-        if (!tr.docChanged) return value
+      apply: (tr, value, oldState, newState): PageRenderingState => {
+        const measured = tr.getMeta(key) as number[] | undefined
 
-        const [group, decoration] = value
-
-        let needRecreate = oldState.doc.childCount !== newState.doc.childCount
-
-        if (!needRecreate) {
-          const count = oldState.doc.childCount
-          for (let i = 0; i < count; i++) {
-            const oldNode = oldState.doc.child(i)
-            const newNode = newState.doc.child(i)
-            if (oldNode.type !== newNode.type) {
-              needRecreate = true
-              break
-            }
-          }
+        if (!tr.docChanged) {
+          if (!measured || measured.length !== newState.doc.childCount) return value
+          return createState(newState.doc, measured, value)
         }
 
-        if (!needRecreate) {
-          const mapped = decoration.map(tr.mapping, tr.doc, {
-            onRemove: () => {
-              needRecreate = true
-            },
-          })
-          if (!needRecreate) {
-            return [group, mapped]
-          }
-        }
-
-        return [group, createDecorationSet(newState.doc, group)]
+        const heights = mapHeights(value.heights, oldState.doc, newState.doc)
+        return createState(newState.doc, heights)
       },
     },
     props: {
       decorations: (state) => {
-        return key.getState(state)?.[1]
+        return key.getState(state)?.decorations
       },
       attributes: {
         style: [
@@ -155,4 +137,141 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
       },
     },
   })
+}
+
+interface PageRenderingState {
+  /**
+   * The measured content box height of each top-level node.
+   */
+  heights: number[]
+  layouts: ChunkLayout[]
+  decorations: DecorationSet
+}
+
+function isSameLayouts(a: ChunkLayout[], b: ChunkLayout[]): boolean {
+  if (a.length !== b.length) return false
+  for (let i = 0; i < a.length; i++) {
+    const x = a[i]
+    const y = b[i]
+    if (
+      x.head !== y.head
+      || x.tail !== y.tail
+      || x.paddingTop !== y.paddingTop
+      || x.paddingBottom !== y.paddingBottom
+    ) {
+      return false
+    }
+  }
+  return true
+}
+
+/**
+ * Carries the measured heights over a document change. Unchanged top-level
+ * nodes at the start and the end of the document keep their heights. The
+ * other nodes keep the height at the same index until the next measurement.
+ */
+function mapHeights(heights: number[], oldDoc: Node, newDoc: Node): number[] {
+  const oldCount = oldDoc.childCount
+  const newCount = newDoc.childCount
+  const result = Array.from<number>({ length: newCount })
+
+  let start = 0
+  while (start < oldCount && start < newCount && oldDoc.child(start) === newDoc.child(start)) {
+    result[start] = heights[start] ?? 0
+    start++
+  }
+
+  let end = 0
+  while (
+    end < oldCount - start
+    && end < newCount - start
+    && oldDoc.child(oldCount - 1 - end) === newDoc.child(newCount - 1 - end)
+  ) {
+    result[newCount - 1 - end] = heights[oldCount - 1 - end] ?? 0
+    end++
+  }
+
+  for (let i = start; i < newCount - end; i++) {
+    result[i] = i < oldCount - end ? (heights[i] ?? 0) : 0
+  }
+
+  return result
+}
+
+/**
+ * Measures the page chunk wrappers and dispatches the heights to the plugin
+ * state. It dispatches only from the `ResizeObserver` callback, which runs
+ * after the layout and before the paint.
+ */
+class PageMeasureView implements PluginView {
+  #view: EditorView
+  #key: PluginKey<PageRenderingState>
+  #observer: ResizeObserver
+  #chunks: (HTMLElement | null)[] = []
+  #observed = new Set<HTMLElement>()
+  #heights = new WeakMap<HTMLElement, number>()
+
+  constructor(view: EditorView, key: PluginKey<PageRenderingState>) {
+    this.#view = view
+    this.#key = key
+    this.#observer = new ResizeObserver(this.#handleResize)
+    this.#observe()
+  }
+
+  update(view: EditorView): void {
+    this.#view = view
+    this.#observe()
+  }
+
+  destroy(): void {
+    this.#observer.disconnect()
+  }
+
+  #observe(): void {
+    const view = this.#view
+    const chunks: (HTMLElement | null)[] = []
+    const current = new Set<HTMLElement>()
+
+    view.state.doc.forEach((_node, pos) => {
+      const dom = view.nodeDOM(pos)
+      const chunk = dom?.parentElement?.closest<HTMLElement>(PAGE_CHUNK_TAG_NAME) ?? null
+      chunks.push(chunk)
+      if (chunk) current.add(chunk)
+    })
+
+    for (const chunk of this.#observed) {
+      if (!current.has(chunk)) {
+        this.#observer.unobserve(chunk)
+      }
+    }
+    for (const chunk of current) {
+      if (!this.#observed.has(chunk)) {
+        this.#observer.observe(chunk)
+      }
+    }
+
+    this.#chunks = chunks
+    this.#observed = current
+  }
+
+  #handleResize = (entries: ResizeObserverEntry[]): void => {
+    for (const entry of entries) {
+      const height = entry.contentBoxSize?.[0]?.blockSize ?? entry.contentRect.height
+      this.#heights.set(entry.target as HTMLElement, height)
+    }
+
+    const view = this.#view
+    const prev = this.#key.getState(view.state)?.heights ?? []
+    const heights = this.#chunks.map((chunk, i) => {
+      const height = chunk ? this.#heights.get(chunk) : undefined
+      return height ?? prev[i] ?? 0
+    })
+
+    // Avoid potential float number precision issues
+    const changed = heights.length !== prev.length
+      || heights.some((height, i) => Math.abs(height - prev[i]) >= 0.1)
+    if (!changed) return
+
+    view.dispatch(view.state.tr.setMeta(this.#key, heights).setMeta('addToHistory', false))
+  }
 }

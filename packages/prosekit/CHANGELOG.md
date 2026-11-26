@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.23.4
+
+### Patch Changes
+
+- [`287c635`](https://github.com/ocavue/prosekit/commit/287c6356543836b4279a380c70bf3f96d3d5e4ba) ![](https://prosekit.dev/b/core)
+
+  Adding or removing extensions now works while the editor is unmounted.
+
 ## 0.23.3
 
 ### Patch Changes

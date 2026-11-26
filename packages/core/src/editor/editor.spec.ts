@@ -1,3 +1,4 @@
+import { noop } from '@ocavue/utils'
 import { Plugin, PluginKey } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 
@@ -216,7 +217,7 @@ describe('createEditor', () => {
 
   it('warns when updating extensions on a destroyed view', () => {
     const { editor } = setupTest()
-    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const warn = vi.spyOn(console, 'warn').mockImplementation(noop)
     const key = new PluginKey('test')
     const plugin = new Plugin({ key })
 

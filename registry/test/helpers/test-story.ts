@@ -333,13 +333,10 @@ const cloneElementTransforms: ElementTransform[] = [
     apply: (element) => element.setAttribute('value', 'SOME_NANOID_WITH_LENGTH_21'),
   },
 
-  // Replace data-group attributes
+  // Replace data-chunk-id attributes
   {
-    matches: (element) => {
-      const value = element.tagName.toLowerCase() === 'pm-page-chunk' && element.getAttribute('data-group')
-      return !!value
-    },
-    apply: (element) => element.setAttribute('data-group', 'SOME_GROUP'),
+    matches: (element) => element.tagName.toLowerCase() === 'pm-page-chunk' && element.hasAttribute('data-chunk-id'),
+    apply: (element) => element.setAttribute('data-chunk-id', 'SOME_CHUNK_ID'),
   },
 
   // Remove React suppressHydrationWarning attribute

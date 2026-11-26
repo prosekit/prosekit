@@ -1,10 +1,12 @@
-import { getId } from '@ocavue/utils'
+import { getId, isDeepEqual } from '@ocavue/utils'
 import { definePlugin, type Extension } from '@prosekit/core'
 import type { Node } from '@prosekit/pm/model'
 import { Plugin, PluginKey } from '@prosekit/pm/state'
+import type { Mapping } from '@prosekit/pm/transform'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-import { PAGE_CHUNK_TAG_NAME, registerPageChunkElement } from './page-element.ts'
+import { computePageLayout, type ChunkLayout } from './page-layout.ts'
+import { PAGE_CHUNK_ID_ATTRIBUTE, PAGE_CHUNK_TAG_NAME, PageMeasureView } from './page-measure.ts'
 
 export interface PageRenderingOptions {
   /**
@@ -51,9 +53,7 @@ export interface PageRenderingOptions {
 }
 
 export function definePageRendering(options: PageRenderingOptions = {}): PageRenderingExtension {
-  return definePlugin(
-    createPageRenderingPlugin(options),
-  )
+  return definePlugin(createPageRenderingPlugin(options))
 }
 
 /**
@@ -71,79 +71,101 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
     marginLeft = 70,
   } = options
 
-  type PluginState = [group: string, decoration: DecorationSet]
+  const key = new PluginKey<PageRenderingState>('prosekit-page-render')
 
-  const key = new PluginKey<PluginState>('prosekit-page-render')
-
-  function createDecorationSet(doc: Node, group: string): DecorationSet {
-    const decorations: Decoration[] = []
-    const totalCount = doc.childCount
-
-    doc.forEach((node, pos, index) => {
-      const isPageBreak: boolean | undefined = node.type.spec.pageBreak
-
-      decorations.push(Decoration.node(pos, pos + node.nodeSize, {
-        'nodeName': PAGE_CHUNK_TAG_NAME,
-        'data-group': group,
-        'data-break': isPageBreak ? 'true' : undefined,
-        'data-h': String(pageHeight),
-        'data-mt': String(marginTop),
-        'data-mb': String(marginBottom),
-        'data-size': index === 0 ? String(totalCount) : undefined,
-      }))
+  /**
+   * Creates the plugin state. It reuses the decorations of `prev` when the
+   * chunk IDs and the layouts are unchanged. Pass `mapping` when the document
+   * has changed since `prev`.
+   */
+  function createState(
+    doc: Node,
+    ids: number[],
+    heights: number[],
+    prev: PageRenderingState | undefined,
+    mapping: Mapping | undefined,
+  ): PageRenderingState {
+    const breaks: boolean[] = []
+    doc.forEach((node) => {
+      breaks.push(!!node.type.spec.pageBreak)
     })
 
-    return DecorationSet.create(doc, decorations)
+    const layouts = computePageLayout(heights, breaks, pageHeight, marginTop, marginBottom)
+
+    if (prev && isDeepEqual(prev.ids, ids) && isDeepEqual(prev.layouts, layouts)) {
+      if (!mapping) {
+        return { ids: prev.ids, heights, layouts: prev.layouts, decorations: prev.decorations }
+      }
+      let removed = false
+      const decorations = prev.decorations.map(mapping, doc, {
+        onRemove: () => {
+          removed = true
+        },
+      })
+      if (!removed) {
+        return { ids: prev.ids, heights, layouts: prev.layouts, decorations }
+      }
+    }
+
+    const decorations: Decoration[] = []
+    doc.forEach((node, pos, index) => {
+      const layout = layouts[index]
+      decorations.push(
+        Decoration.node(pos, pos + node.nodeSize, {
+          'nodeName': PAGE_CHUNK_TAG_NAME,
+          [PAGE_CHUNK_ID_ATTRIBUTE]: String(ids[index]),
+          'data-page-head': layout.head ? '' : undefined,
+          'data-page-tail': layout.tail ? '' : undefined,
+          'style': `padding-top:${layout.paddingTop}px;padding-bottom:${layout.paddingBottom}px;`,
+        }),
+      )
+    })
+
+    return { ids, heights, layouts, decorations: DecorationSet.create(doc, decorations) }
   }
 
-  return new Plugin<PluginState>({
+  return new Plugin<PageRenderingState>({
     key,
-    view: () => {
-      registerPageChunkElement()
-      return {}
+    view: (view) => {
+      return new PageMeasureView(view, (measured) => {
+        const state = key.getState(view.state)
+        if (!state) return
+
+        // Avoid potential float number precision issues
+        const changed = state.ids.some((id, i) => {
+          const height = measured.get(id)
+          return height != null && Math.abs(height - state.heights[i]) >= 0.1
+        })
+        if (!changed) return
+
+        view.dispatch(view.state.tr.setMeta(key, measured).setMeta('addToHistory', false))
+      })
     },
     state: {
-      init: (_config, state): PluginState => {
-        const group = `page-group-${getId()}`
-        const decoration = createDecorationSet(state.doc, group)
-        return [group, decoration]
+      init: (_config, state): PageRenderingState => {
+        const ids: number[] = []
+        const heights: number[] = []
+        state.doc.forEach(() => {
+          ids.push(getId())
+          heights.push(0)
+        })
+        return createState(state.doc, ids, heights, undefined, undefined)
       },
-      apply: (tr, value, oldState, newState): PluginState => {
-        if (!tr.docChanged) return value
-
-        const [group, decoration] = value
-
-        let needRecreate = oldState.doc.childCount !== newState.doc.childCount
-
-        if (!needRecreate) {
-          const count = oldState.doc.childCount
-          for (let i = 0; i < count; i++) {
-            const oldNode = oldState.doc.child(i)
-            const newNode = newState.doc.child(i)
-            if (oldNode.type !== newNode.type) {
-              needRecreate = true
-              break
-            }
-          }
+      apply: (tr, value, oldState, newState): PageRenderingState => {
+        if (!tr.docChanged) {
+          const measured = tr.getMeta(key) as Map<number, number> | undefined
+          if (!measured) return value
+          const heights = value.ids.map((id, i) => measured.get(id) ?? value.heights[i])
+          return createState(newState.doc, value.ids, heights, value, undefined)
         }
 
-        if (!needRecreate) {
-          const mapped = decoration.map(tr.mapping, tr.doc, {
-            onRemove: () => {
-              needRecreate = true
-            },
-          })
-          if (!needRecreate) {
-            return [group, mapped]
-          }
-        }
-
-        return [group, createDecorationSet(newState.doc, group)]
+        const { ids, heights } = mapChunks(value, oldState.doc, newState.doc)
+        return createState(newState.doc, ids, heights, value, tr.mapping)
       },
     },
     props: {
       decorations: (state) => {
-        return key.getState(state)?.[1]
+        return key.getState(state)?.decorations
       },
       attributes: {
         style: [
@@ -155,4 +177,66 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
       },
     },
   })
+}
+
+interface PageRenderingState {
+  /**
+   * The chunk ID of each top-level node. A chunk ID stays the same over
+   * document changes that keep the node.
+   */
+  ids: number[]
+  /**
+   * The measured content box height of each top-level node.
+   */
+  heights: number[]
+  layouts: ChunkLayout[]
+  decorations: DecorationSet
+}
+
+/**
+ * Carries the chunk IDs and the measured heights over a document change.
+ * Unchanged top-level nodes at the start and the end of the document keep
+ * their IDs and heights. The other nodes keep the ID and the height at the
+ * same index. New nodes get new IDs and zero heights until the next
+ * measurement.
+ */
+function mapChunks(
+  prev: PageRenderingState,
+  oldDoc: Node,
+  newDoc: Node,
+): { ids: number[]; heights: number[] } {
+  const oldCount = oldDoc.childCount
+  const newCount = newDoc.childCount
+  const ids = Array.from<number>({ length: newCount })
+  const heights = Array.from<number>({ length: newCount })
+
+  let start = 0
+  while (start < oldCount && start < newCount && oldDoc.child(start) === newDoc.child(start)) {
+    ids[start] = prev.ids[start]
+    heights[start] = prev.heights[start]
+    start++
+  }
+
+  let end = 0
+  while (
+    end < oldCount - start
+    && end < newCount - start
+    && oldDoc.child(oldCount - 1 - end) === newDoc.child(newCount - 1 - end)
+  ) {
+    ids[newCount - 1 - end] = prev.ids[oldCount - 1 - end]
+    heights[newCount - 1 - end] = prev.heights[oldCount - 1 - end]
+    end++
+  }
+
+  for (let i = start; i < newCount - end; i++) {
+    if (i < oldCount - end) {
+      ids[i] = prev.ids[i]
+      heights[i] = prev.heights[i]
+    } else {
+      ids[i] = getId()
+      heights[i] = 0
+    }
+  }
+
+  return { ids, heights }
 }

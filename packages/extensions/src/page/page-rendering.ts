@@ -2,6 +2,7 @@ import { isDeepEqual } from '@ocavue/utils'
 import { definePlugin, type Extension } from '@prosekit/core'
 import type { Node } from '@prosekit/pm/model'
 import { Plugin, PluginKey, type PluginView } from '@prosekit/pm/state'
+import type { Mapping } from '@prosekit/pm/transform'
 import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 
 import { computePageLayout, type ChunkLayout } from './page-layout.ts'
@@ -73,10 +74,16 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
 
   const key = new PluginKey<PageRenderingState>('prosekit-page-render')
 
+  /**
+   * Creates the plugin state. It reuses the decorations of `prev` when the
+   * layouts are unchanged. Pass `mapping` when the document has changed since
+   * `prev`.
+   */
   function createState(
     doc: Node,
     heights: number[],
-    prev?: PageRenderingState,
+    prev: PageRenderingState | undefined,
+    mapping: Mapping | undefined,
   ): PageRenderingState {
     const breaks: boolean[] = []
     doc.forEach((node) => {
@@ -86,7 +93,18 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
     const layouts = computePageLayout(heights, breaks, pageHeight, marginTop, marginBottom)
 
     if (prev && isDeepEqual(prev.layouts, layouts)) {
-      return { heights, layouts: prev.layouts, decorations: prev.decorations }
+      if (!mapping) {
+        return { heights, layouts: prev.layouts, decorations: prev.decorations }
+      }
+      let removed = false
+      const decorations = prev.decorations.map(mapping, doc, {
+        onRemove: () => {
+          removed = true
+        },
+      })
+      if (!removed) {
+        return { heights, layouts: prev.layouts, decorations }
+      }
     }
 
     const decorations: Decoration[] = []
@@ -110,18 +128,18 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
     view: (view) => new PageMeasureView(view, key),
     state: {
       init: (_config, state): PageRenderingState => {
-        return createState(state.doc, [])
+        return createState(state.doc, [], undefined, undefined)
       },
       apply: (tr, value, oldState, newState): PageRenderingState => {
         const measured = tr.getMeta(key) as number[] | undefined
 
         if (!tr.docChanged) {
           if (!measured || measured.length !== newState.doc.childCount) return value
-          return createState(newState.doc, measured, value)
+          return createState(newState.doc, measured, value, undefined)
         }
 
         const heights = mapHeights(value.heights, oldState.doc, newState.doc)
-        return createState(newState.doc, heights)
+        return createState(newState.doc, heights, value, tr.mapping)
       },
     },
     props: {

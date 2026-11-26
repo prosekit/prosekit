@@ -176,10 +176,8 @@ export class EditorInstance {
   }
 
   private updateExtension(extension: Extension, add: boolean): void {
-    const view = this.view
-
-    // Don't update the extension if the editor is already unmounted
-    if (!view || view.isDestroyed) {
+    if (this.view?.isDestroyed) {
+      console.warn('[prosekit] Unable to update extensions because the editor view is destroyed but not unmounted.')
       return
     }
 
@@ -195,7 +193,8 @@ export class EditorInstance {
     }
 
     const oldPayload = this.tree.getRootOutput()
-    const oldPlugins = [...(view.state?.plugins ?? [])]
+    const oldState = this.getState()
+    const oldPlugins = [...oldState.plugins]
 
     this.tree = add
       ? unionFacetNode(this.tree, tree)
@@ -205,8 +204,7 @@ export class EditorInstance {
     const newPlugins = [...(newPayload?.state?.plugins ?? [])]
 
     if (!isDeepEqual(oldPlugins, newPlugins)) {
-      const state = view.state.reconfigure({ plugins: newPlugins })
-      view.updateState(state)
+      this.updateState(oldState.reconfigure({ plugins: newPlugins }))
     }
 
     if (

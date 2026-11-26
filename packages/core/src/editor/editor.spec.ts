@@ -1,7 +1,9 @@
+import { Plugin, PluginKey } from '@prosekit/pm/state'
 import { describe, expect, it, vi } from 'vitest'
 
 import { insertText } from '../commands/insert-text.ts'
 import { wrap } from '../commands/wrap.ts'
+import { definePlugin } from '../extensions/plugin.ts'
 import { defineTestExtension, setupTest } from '../testing/index.ts'
 import type { NodeJSON } from '../types/model.ts'
 
@@ -190,5 +192,40 @@ describe('createEditor', () => {
     editor.mount(document.body.appendChild(document.createElement('div')))
     expect(editor.mounted).toBe(true)
     expect(editor.view).not.toBe(view)
+  })
+
+  it('can remove an extension after the editor is unmounted', () => {
+    const { editor } = setupTest()
+    const key = new PluginKey('test')
+
+    const plugin1 = new Plugin({ key })
+    const dispose1 = editor.use(definePlugin(plugin1))
+    expect(key.get(editor.state)).toBe(plugin1)
+
+    editor.unmount()
+    dispose1()
+    expect(key.get(editor.state)).toBeUndefined()
+
+    editor.mount(document.body.appendChild(document.createElement('div')))
+    expect(key.get(editor.state)).toBeUndefined()
+
+    const plugin2 = new Plugin({ key })
+    editor.use(definePlugin(plugin2))
+    expect(key.get(editor.state)).toBe(plugin2)
+  })
+
+  it('warns when updating extensions on a destroyed view', () => {
+    const { editor } = setupTest()
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const key = new PluginKey('test')
+    const plugin = new Plugin({ key })
+
+    const dispose = editor.use(definePlugin(plugin))
+    editor.view.destroy()
+    dispose()
+
+    expect(warn).toHaveBeenCalledOnce()
+    expect(key.get(editor.state)).toBe(plugin)
+    warn.mockRestore()
   })
 })

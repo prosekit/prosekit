@@ -1,3 +1,4 @@
+import { isDeepEqual } from '@ocavue/utils'
 import { definePlugin, type Extension } from '@prosekit/core'
 import type { Node } from '@prosekit/pm/model'
 import { Plugin, PluginKey, type PluginView } from '@prosekit/pm/state'
@@ -84,7 +85,7 @@ function createPageRenderingPlugin(options: PageRenderingOptions): Plugin {
 
     const layouts = computePageLayout(heights, breaks, pageHeight, marginTop, marginBottom)
 
-    if (prev && isSameLayouts(prev.layouts, layouts)) {
+    if (prev && isDeepEqual(prev.layouts, layouts)) {
       return { heights, layouts: prev.layouts, decorations: prev.decorations }
     }
 
@@ -146,23 +147,6 @@ interface PageRenderingState {
   heights: number[]
   layouts: ChunkLayout[]
   decorations: DecorationSet
-}
-
-function isSameLayouts(a: ChunkLayout[], b: ChunkLayout[]): boolean {
-  if (a.length !== b.length) return false
-  for (let i = 0; i < a.length; i++) {
-    const x = a[i]
-    const y = b[i]
-    if (
-      x.head !== y.head
-      || x.tail !== y.tail
-      || x.paddingTop !== y.paddingTop
-      || x.paddingBottom !== y.paddingBottom
-    ) {
-      return false
-    }
-  }
-  return true
 }
 
 /**
